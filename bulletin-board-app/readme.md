@@ -18,8 +18,25 @@ This is the code for the Vue.js [tutorial on Scotch.io](https://scotch.io/tutori
 
 If you would like to use a backend written in Go, [thewhitetulip](http://github.com/thewhitetulip) has written on. See [the source code](https://github.com/thewhitetulip/go-vue-events).
 
-## Docker 
+---
 
+## Modified by Julie Erlemeier 
+
+## Dockerfile
+```
+FROM node:current-slim
+
+WORKDIR /usr/src/app
+COPY package.json .
+RUN npm install
+
+EXPOSE 8080
+CMD [ "npm", "start" ]
+
+COPY . .
+```
+
+## Docker CLI
 1. `docker build --tag <NAMEOFIMAGE> .`
 2. `docker run --publish 8000:8080 --detach --name bb bb:1.0`
  
