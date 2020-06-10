@@ -1,10 +1,12 @@
 FROM node:current-slim
 
-WORKDIR /usr/src/app
-COPY package.json .
-RUN npm install
-
 EXPOSE 8080
-CMD [ "npm", "start" ]
 
+WORKDIR /usr/src/app
+
+COPY package.json .
 COPY . .
+
+RUN npm install && npm cache clean --force
+
+CMD [ "node", "./bin/www" ]

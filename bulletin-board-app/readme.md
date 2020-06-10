@@ -23,6 +23,8 @@ If you would like to use a backend written in Go, [thewhitetulip](http://github.
 ## Modified by Julie Erlemeier 
 
 ## Dockerfile
+Be literal and specific
+
 ```
 FROM node:current-slim
 
@@ -40,3 +42,6 @@ COPY . .
 1. `docker build --tag <NAMEOFIMAGE> .`
 2. `docker run --publish 8000:8080 --detach --name bb bb:1.0`
  
+## Test
+1. `curl http://localhost:8000`
+2. Go to browser and type http://localhost:8000 in address bar.
