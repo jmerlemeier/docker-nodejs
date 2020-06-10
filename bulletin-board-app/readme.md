@@ -17,4 +17,9 @@ This is the code for the Vue.js [tutorial on Scotch.io](https://scotch.io/tutori
 ## RESTful API written in Go 
 
 If you would like to use a backend written in Go, [thewhitetulip](http://github.com/thewhitetulip) has written on. See [the source code](https://github.com/thewhitetulip/go-vue-events).
+
+## Docker 
+
+1. `docker build --tag <NAMEOFIMAGE> .`
+2. `docker run --publish 8000:8080 --detach --name bb bb:1.0`
  
