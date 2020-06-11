@@ -38,6 +38,12 @@ CMD [ "npm", "start" ]
 COPY . .
 ```
 
+## Node use in Dockerfile
+- COPY, not ADD
+- npm/yarn install, make sure you cleanup (RUN npm install && npm cache clean --force)
+- CMD node, not npm
+- WORKDIR, not RUN mkdir (unless you need chown)
+
 ## Docker CLI
 1. `docker build --tag <NAMEOFIMAGE> .`
 2. `docker run --publish 8000:8080 --detach --name bb bb:1.0`
